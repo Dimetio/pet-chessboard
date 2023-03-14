@@ -1,3 +1,5 @@
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { canMoveKnight, moveKnight } from "../game";
 import Knight from "./Knight";
 import Square from "./Square";
@@ -16,13 +18,15 @@ function renderSquare(i: any, [knightX, knightY]: any) {
   const place = isKnigthHere ? <Knight /> : null;
 
   return (
-    <div
-      key={i}
-      className="square-wrap"
-      onClick={() => hanldeSquareClick(x, y)}
-    >
-      <Square black={black}>{place}</Square>
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div
+        key={i}
+        className="square-wrap"
+        onClick={() => hanldeSquareClick(x, y)}
+      >
+        <Square black={black}>{place}</Square>
+      </div>
+    </DndProvider>
   );
 }
 
