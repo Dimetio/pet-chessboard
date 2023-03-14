@@ -1,9 +1,11 @@
-import { moveKnight } from "../game";
+import { canMoveKnight, moveKnight } from "../game";
 import Knight from "./Knight";
 import Square from "./Square";
 
 function hanldeSquareClick(toX: any, toY: any) {
-  moveKnight(toX, toY);
+  if (canMoveKnight(toX, toY)) {
+    moveKnight(toX, toY);
+  }
 }
 
 function renderSquare(i: any, [knightX, knightY]: any) {
