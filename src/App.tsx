@@ -1,10 +1,10 @@
 import "./App.css";
 import Board from "./components/Board";
 
-function App() {
+function App({ position }: any) {
   return (
     <div className="App">
-      <Board position={[0,0]}/>
+      <Board position={position} />
     </div>
   );
 }
