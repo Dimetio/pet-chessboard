@@ -1,3 +1,3 @@
 export default function Knight() {
-  return <div>♘</div>;
+  return <div className="figure">♘</div>;
 }
